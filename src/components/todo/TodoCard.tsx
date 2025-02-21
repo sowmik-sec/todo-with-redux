@@ -6,10 +6,17 @@ type TTodoCardProps = {
   id: string;
   title: string;
   description: string;
+  priority: string;
   isCompleted?: boolean;
 };
 
-const TodoCard = ({ id, title, description, isCompleted }: TTodoCardProps) => {
+const TodoCard = ({
+  id,
+  title,
+  description,
+  priority,
+  isCompleted,
+}: TTodoCardProps) => {
   const dispatch = useAppDispatch();
   const toggleState = () => {
     console.log("clicked");
@@ -32,6 +39,7 @@ const TodoCard = ({ id, title, description, isCompleted }: TTodoCardProps) => {
         )}
       </p>
       <p>{description}</p>
+      <p>{priority}</p>
       <div className="space-x-5">
         <Button
           onClick={() => dispatch(removeTodo(id))}

@@ -16,6 +16,7 @@ import { FormEvent, useState } from "react";
 const AddTodoModal = () => {
   const [task, setTask] = useState("");
   const [description, setDescription] = useState("");
+  const [priority, setPriority] = useState("");
   const [open, setOpen] = useState(false); // Track modal open state
   const dispatch = useAppDispatch();
   const onSubmit = (e: FormEvent) => {
@@ -62,6 +63,17 @@ const AddTodoModal = () => {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 id="description"
+                className="col-span-3"
+              />
+            </div>
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label htmlFor="priority" className="text-right">
+                Priority
+              </Label>
+              <Input
+                value={priority}
+                onChange={(e) => setPriority(e.target.value)}
+                id="priority"
                 className="col-span-3"
               />
             </div>

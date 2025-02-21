@@ -4,8 +4,14 @@ type TTodo = {
   id: string;
   title: string;
   description: string;
+  //   priority: "high" | "medium" | "low";
   isCompleted?: boolean;
 };
+// const priorityOrder: Record<TTodo["priority"], number> = {
+//   high: 1,
+//   medium: 2,
+//   low: 3,
+// };
 
 type TInitialState = {
   todos: TTodo[];
@@ -30,6 +36,11 @@ const todoSlice = createSlice({
       state.todos = state.todos.filter((item) => item.id !== action.payload);
       state.todos.push(task!);
     },
+    // filterTodo: (state, action: PayloadAction<string>) => {
+    //   state.todos = state.todos.sort(
+    //     (a, b) => priorityOrder[a.priority] - priorityOrder[b.priority]
+    //   );
+    // },
   },
 });
 
