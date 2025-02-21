@@ -20,7 +20,8 @@ const AddTodoModal = () => {
   const dispatch = useAppDispatch();
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
-    dispatch(addTodo({ title: task, description }));
+    const randomString = Math.random().toString(36).substring(2, 7);
+    dispatch(addTodo({ id: randomString, title: task, description }));
     setOpen(false); // Close the dialog after submitting
   };
 
