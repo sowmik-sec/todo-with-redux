@@ -9,16 +9,18 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { addTodo } from "@/redux/features/todoSlice";
+import { useAppDispatch } from "@/redux/hook";
 import { FormEvent, useState } from "react";
 
 const AddTodoModal = () => {
   const [task, setTask] = useState("");
   const [description, setDescription] = useState("");
   const [open, setOpen] = useState(false); // Track modal open state
-
+  const dispatch = useAppDispatch();
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log({ task, description });
+    dispatch(addTodo({ title: task, description }));
     setOpen(false); // Close the dialog after submitting
   };
 
