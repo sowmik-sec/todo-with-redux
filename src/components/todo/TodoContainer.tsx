@@ -5,11 +5,11 @@ import { TodoFilter } from "./TodoFilter";
 import { useGetTodosQuery } from "@/redux/api/api";
 
 const TodoContainer = () => {
-  // const { todos } = useAppSelector((state) => state.todos);
-  const { data: todos, isLoading, isError } = useGetTodosQuery(undefined);
-  if (isLoading) {
-    return <p>Loading...</p>;
-  }
+  const { todos } = useAppSelector((state) => state.todos);
+  // const { data: todos, isLoading, isError } = useGetTodosQuery(undefined);
+  // if (isLoading) {
+  //   return <p>Loading...</p>;
+  // }
   return (
     <div>
       <div className="flex justify-between mb-5">

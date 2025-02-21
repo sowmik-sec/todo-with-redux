@@ -4,7 +4,7 @@ type TTodo = {
   id: string;
   title: string;
   description: string;
-  //   priority: "high" | "medium" | "low";
+  priority: "high" | "medium" | "low";
   isCompleted?: boolean;
 };
 // const priorityOrder: Record<TTodo["priority"], number> = {
