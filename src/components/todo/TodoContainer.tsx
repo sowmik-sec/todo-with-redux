@@ -2,7 +2,7 @@ import { useAppSelector } from "@/redux/hook";
 import AddTodoModal from "./AddTodoModal";
 import TodoCard from "./TodoCard";
 import { TodoFilter } from "./TodoFilter";
-import { useGetTodosQuery } from "@/redux/api/api";
+// import { useGetTodosQuery } from "@/redux/api/api";
 
 const TodoContainer = () => {
   const { todos } = useAppSelector((state) => state.todos);
