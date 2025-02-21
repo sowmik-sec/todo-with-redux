@@ -22,6 +22,8 @@ const AddTodoModal = () => {
     e.preventDefault();
     const randomString = Math.random().toString(36).substring(2, 7);
     dispatch(addTodo({ id: randomString, title: task, description }));
+    setTask("");
+    setDescription("");
     setOpen(false); // Close the dialog after submitting
   };
 
