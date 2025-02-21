@@ -23,7 +23,7 @@ import { addTodo } from "@/redux/features/todoSlice";
 import { useAppDispatch } from "@/redux/hook";
 import { FormEvent, useState } from "react";
 
-type Priority = "high" | "medium" | "low";
+export type Priority = "high" | "medium" | "low";
 
 const AddTodoModal = () => {
   const [task, setTask] = useState("");
